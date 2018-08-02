@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-    entry:  './src/index.jsx',
+    entry:  './src/index.js',
     output: {
         path: __dirname + '/public',
         filename: './app.js'
@@ -12,7 +12,7 @@ module.exports = {
         contentBase: './public'
     },
     resolver: {
-        extensions: ['', '.js', '.jsx'],
+        extensions: ['', '.js'],
         alias: {
             modules: __dirname + '/node_modules',
 
