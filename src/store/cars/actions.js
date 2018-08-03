@@ -3,7 +3,7 @@ import * as types from './types';
 
 import changeUrl from '../../lib/changeUrl';
 
-const apiUrl = 'http://tchml.tradersclub.com.br:12000/api/';
+const apiUrl = 'http://tchml.tradersclub.com.br:12000/api';
 
 export function setTitle(text) {
     return { type: types.DETAIL_TITLE, payload: text };
@@ -50,15 +50,13 @@ export function selectCar(car) {
         return { type: types.SELECT_CAR, payload: car };
     }
 
-    return false;
+    return { type: types.SELECT_CAR, payload: null };
 }
 
 export function createCar(car) {
     return dispatch => {
         axios
-            .post(`${apiUrl}/cars`, car)
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
+            .post(`${apiUrl}/cars`, { car })
     }
 }
 
@@ -66,8 +64,7 @@ function getCars(text) {
     return dispatch => {
         axios
             .get(`${apiUrl}/cars?search=${text}`)
-            .then(res => dispatch({ type: types.SEARCH, payload: res.data.cars }))
-            .catch(err => console.log(err));
+            .then(res => dispatch({ type: types.SEARCH, payload: res.data.cars }));
     }
 }
 
@@ -75,26 +72,21 @@ export function getBrands() {
     return dispatch => {
         axios
             .get(`${apiUrl}/brands`)
-            .then(res => dispatch({ type: types.SEARCH_BRAND, payload: res.data.brands }))
-            .catch(err => console.log(err));
+            .then(res => dispatch({ type: types.SEARCH_BRAND, payload: res.data.brands }));
     }
 }
-
 
 export function updateCar(id, car) {
     return dispatch => {
         axios
-            .put(`${apiUrl}/cars/${id}`, car)
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
+            .put(`${apiUrl}/cars/${id}`, { car });
     }
 }
 
 export function deleteCar(id) {
     return dispatch => {
+        console.log(id)
         axios
-            .delete(`${apiUrl}/cars/${id}`)
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
+            .delete(`${apiUrl}/cars/${id}`);
     }
 }

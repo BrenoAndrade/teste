@@ -6,6 +6,8 @@ import * as actions from '../../../store/cars/actions';
 
 import './style.css';
 
+import Action from './Action';
+
 class PageDetails extends Component {
     componentWillMount() {
         this.props.getBrands();
@@ -16,7 +18,7 @@ class PageDetails extends Component {
         const { setBrand, setColor, setKm, setModel, setPrice, setTitle, setYear } = this.props;
 
         return (
-            <div className="detail-form">
+            <form className="detail-form pages">
                 <input 
                     readOnly={false}
                     placeholder="Título"  
@@ -66,7 +68,9 @@ class PageDetails extends Component {
                     className="detail-input defailt-half" 
                     value={car.km || ''}
                     onChange={e => setKm(e.target.value)}/>
-            </div>
+
+                <Action />
+            </form>
         );
     }
 }

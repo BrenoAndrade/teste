@@ -1,6 +1,8 @@
 .detail-form {
     padding: 10%;
     padding-right: 15%;
+    clear:left;
+    display:inline;
 }
 
 .detail-div-half {

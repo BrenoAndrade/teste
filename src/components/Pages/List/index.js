@@ -12,7 +12,7 @@ class PageList extends Component {
         const { cars, selectCar } = this.props;
 
         return (
-            <ul>
+            <ul className="pages">
                 { cars.map(car => <Item key={car.id} car={car} selectCar={selectCar}/>) }
             </ul>
         );
