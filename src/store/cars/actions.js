@@ -70,9 +70,10 @@ function getCars(text) {
 
 export function getBrands() {
     return dispatch => {
+        console.log('aki')
         axios
             .get(`${apiUrl}/brands`)
-            .then(res => dispatch({ type: types.SEARCH_BRAND, payload: res.data.brands }));
+            .then(res => dispatch({ type: types.SEARCH_BRANDS, payload: res.data.brands }));
     }
 }
 

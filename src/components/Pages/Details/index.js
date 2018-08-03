@@ -24,7 +24,7 @@ class PageDetails extends Component {
                     placeholder="Título"  
                     type="text" 
                     className="detail-input detail-full" 
-                    value={car.title || ''}
+                    value={car.title}
                     onChange={e => setTitle(e.target.value)}/>
                 <div className="detail-div-half">
                     <input 
@@ -32,14 +32,14 @@ class PageDetails extends Component {
                         placeholder="Modelo" 
                         type="text" 
                         className="detail-input detail-half" 
-                        value={car.model || ''}
+                        value={car.model}
                         onChange={e => setModel(e.target.value)}/>
                     <input 
                         readOnly={false}
                         placeholder="Ano" 
                         type="text" 
                         className="detail-input defailt-half" 
-                        value={car.year || ''}
+                        value={car.year}
                         onChange={e => setYear(e.target.value)}/>
                 </div>
                 <select className="detail-input" onChange={e => setBrand(e.target.value)} readOnly={false}>
@@ -51,14 +51,14 @@ class PageDetails extends Component {
                         placeholder="Cor" 
                         type="text" 
                         className="detail-input detail-half" 
-                        value={car.color || ''}
+                        value={car.color}
                         onChange={e => setColor(e.target.value)}/>
                     <input 
                         readOnly={false}
                         placeholder="Preço" 
                         type="text" 
                         className="detail-input defailt-half" 
-                        value={car.price || ''}
+                        value={car.price}
                         onChange={e => setPrice(e.target.value)}/>
                 </div>
                 <input 
@@ -66,7 +66,7 @@ class PageDetails extends Component {
                     placeholder="KM" 
                     type="text" 
                     className="detail-input defailt-half" 
-                    value={car.km || ''}
+                    value={car.km}
                     onChange={e => setKm(e.target.value)}/>
 
                 <Action />
