@@ -1,0 +1,28 @@
+.detail-form {
+    padding: 10%;
+    padding-right: 15%;
+}
+
+.detail-div-half {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.detail-input {
+    background-color: transparent;
+    font-size: 25px;
+    padding: 15px 32px;
+    border-color: #e7e7e7;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    color: #e7e7e7;
+}
+
+.detail-full {
+    width: 100%;
+}
+
+.detail-half {
+    width: 50%;    
+}

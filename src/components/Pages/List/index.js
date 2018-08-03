@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
-import Item from './Item';
+import { bindActionCreators } from 'redux';
 
 import './style.css';
 
+import { selectCar } from '../../../store/cars/actions';
+import Item from './Item';
+
 class PageList extends Component {
     render() {
-        const { cars } = this.props;
+        const { cars, selectCar } = this.props;
+
         return (
             <ul>
-                { cars.map(car => <Item key={car.id} car={car} />) }
+                { cars.map(car => <Item key={car.id} car={car} selectCar={selectCar}/>) }
             </ul>
-        )
+        );
     }
 }
 
-const mapStateToProps = state => ({
-    cars: state.cars.list
-})
+const mapDispatchToProps = dispatch => bindActionCreators({ selectCar }, dispatch);
 
-export default connect(mapStateToProps)(PageList);
+const mapStateToProps = state => ({ cars: state.cars.list });
+
+export default connect(mapStateToProps, mapDispatchToProps)(PageList);

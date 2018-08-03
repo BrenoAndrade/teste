@@ -1,8 +1,8 @@
 import React from 'react';
 import CurrencyFormat from 'react-currency-format';
 
-export default ({ car }) => (
-    <div className="column">
+export default ({ car, selectCar }) => (
+    <div className="column div" onClick={() => selectCar(car)}>
         <div className="div-item">
             <div className="div-item-up">
                 <h2>{ car.title }</h2>
