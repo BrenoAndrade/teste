@@ -11,24 +11,26 @@ const Action = props => {
     const id = car ? car.id : false;
 
     return (
-        <div>
-            <div>
-                <button disabled={!id} onClick={() => {
+        <div className="row div-btn">
+            <div className="row">
+                <button className="btn" disabled={!id} onClick={() => {
                     deleteCar(id);
                     changeUrl(null, '#/');
                 }}>
                     Remover
                 </button>
-                <button onClick={() => changeUrl(null, '#/')}>Cancelar</button>
+                <button className="btn" onClick={() => changeUrl(null, '#/')}>Cancelar</button>
             </div>
-            <button onClick={() => {
-                if(id) updateCar(id, car);
-                else createCar(car);
+            <div className="row">
+                <button className="btn-new" onClick={() => {
+                    if(id) updateCar(id, car);
+                    else createCar(car);
 
-                changeUrl(null, '#/');
-            }}>
-                Salvar
-            </button>
+                    changeUrl(null, '#/');
+                }}>
+                    Salvar
+                </button>
+            </div>
         </div>
     );
 }

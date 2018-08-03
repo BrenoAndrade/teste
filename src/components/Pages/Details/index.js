@@ -18,55 +18,50 @@ class PageDetails extends Component {
         const { setBrand, setColor, setKm, setModel, setPrice, setTitle, setYear } = this.props;
 
         return (
-            <form className="detail-form pages">
+            <form className="detail-form">
                 <input 
-                    readOnly={false}
                     placeholder="Título"  
                     type="text" 
                     className="detail-input detail-full" 
                     value={car.title}
                     onChange={e => setTitle(e.target.value)}/>
                 <div className="detail-div-half">
-                    <input 
-                        readOnly={false}
+                    <input                     
                         placeholder="Modelo" 
                         type="text" 
                         className="detail-input detail-half" 
                         value={car.model}
                         onChange={e => setModel(e.target.value)}/>
                     <input 
-                        readOnly={false}
                         placeholder="Ano" 
                         type="text" 
-                        className="detail-input defailt-half" 
+                        className="detail-input detail-half" 
                         value={car.year}
                         onChange={e => setYear(e.target.value)}/>
                 </div>
-                <select className="detail-input" onChange={e => setBrand(e.target.value)} readOnly={false}>
-                    { brands.map(brand => <option selected={brand.name == car.brand} value={brand.name}>{brand.name}</option>) }
+                <select className="detail-input detail-drop" onChange={e => setBrand(e.target.value)}>
+                    <option value="#" disabled selected={ car && !car.id }>Escolha uma marca</option>
+                    { brands.map(brand => <option key={brand.id} selected={car && car.brand == brand.name} value={brand.name}>{brand.name}</option>) }
                 </select>
                 <div className="detail-div-half">
                     <input
-                        readOnly={false} 
                         placeholder="Cor" 
                         type="text" 
                         className="detail-input detail-half" 
                         value={car.color}
                         onChange={e => setColor(e.target.value)}/>
-                    <input 
-                        readOnly={false}
+                    <input                        
                         placeholder="Preço" 
                         type="text" 
-                        className="detail-input defailt-half" 
+                        className="detail-input detail-half" 
                         value={car.price}
                         onChange={e => setPrice(e.target.value)}/>
                 </div>
                 <input 
-                    readOnly={false}
                     placeholder="KM" 
                     type="text" 
-                    className="detail-input defailt-half" 
-                    value={car.km}
+                    className="detail-input detail-half" 
+                    value={car.price}
                     onChange={e => setKm(e.target.value)}/>
 
                 <Action />
