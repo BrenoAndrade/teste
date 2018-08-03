@@ -1,3 +1,11 @@
 .principal {
     padding-left: 20%;
 }
+
+.img-car {
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 80%;
+    height: 88%;
+    opacity: 0.05;
+}
