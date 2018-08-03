@@ -70,7 +70,6 @@ function getCars(text) {
 
 export function getBrands() {
     return dispatch => {
-        console.log('aki')
         axios
             .get(`${apiUrl}/brands`)
             .then(res => dispatch({ type: types.SEARCH_BRANDS, payload: res.data.brands }));
@@ -86,7 +85,6 @@ export function updateCar(id, car) {
 
 export function deleteCar(id) {
     return dispatch => {
-        console.log(id)
         axios
             .delete(`${apiUrl}/cars/${id}`);
     }
